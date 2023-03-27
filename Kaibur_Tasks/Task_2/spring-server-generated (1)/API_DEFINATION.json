@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Kaiburr Task 2 API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080"
+    }
+  ],
+  "paths": {
+    "/servers": {
+      "get": {
+        "summary": "Get all servers",
+        "operationId": "getServers",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new server",
+        "operationId": "createServer",
+        "requestBody": {
+          "description": "Server object to be created",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Server"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/servers/{id}": {
+      "get": {
+        "summary": "Get server by ID",
+        "operationId": "getServerById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of server to return",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete server by ID",
+        "operationId": "deleteServerById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of server to delete",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/servers/search/{name}": {
+      "get": {
+        "summary": "Search servers by name",
+        "operationId": "searchServersByName",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Name of server to search",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Server": {
+        "type": "object",
+        "required": [
+          "name",
+          "id",
+          "language",
+          "framework"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          },
+          "framework": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
