@@ -1,0 +1,63 @@
+.search-by-id-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-by-id-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-by-id-label {
+  margin-right: 10px;
+}
+
+.search-by-id-input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.search-by-id-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-by-id-table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.search-by-id-table th, .search-by-id-table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.search-by-id-table th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.search-by-id-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.search-by-id-table tr:hover {
+  background-color: #ddd;
+}
+
+.search-by-id-no-results {
+  color: red;
+  font-style: italic;
+}

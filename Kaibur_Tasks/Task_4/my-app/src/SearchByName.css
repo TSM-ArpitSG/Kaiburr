@@ -1,0 +1,86 @@
+.search-by-name-container {
+  margin: 20px auto;
+  width: 80%;
+  max-width: 800px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-by-name-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-by-name-container form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-by-name-container form label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.search-by-name-container form input[type="text"] {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-by-name-container form button[type="submit"] {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #2e8b57;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-by-name-container form button[type="submit"]:hover {
+  background-color: #228b22;
+}
+
+.search-by-name-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.search-by-name-container table thead {
+  background-color: #2e8b57;
+  color: #fff;
+}
+
+.search-by-name-container table th,
+.search-by-name-container table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+.search-by-name-container table th:first-child,
+.search-by-name-container table td:first-child {
+  border-left: none;
+}
+
+.search-by-name-container table th:last-child,
+.search-by-name-container table td:last-child {
+  border-right: none;
+}
+
+.search-by-name-container p {
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
+
