@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/servers")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ServerController {
 
     private final ServerService serverService;

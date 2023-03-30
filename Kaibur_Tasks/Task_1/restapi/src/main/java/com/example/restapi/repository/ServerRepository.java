@@ -5,12 +5,15 @@ import java.util.Optional;
 
 import com.example.restapi.model.Server;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 /**
  * Interface for performing CRUD operations on the Server collection in MongoDB
  * This interface extends the MongoRepository interface to provide database operations on the Server model.
  * It defines methods to find a server by name containing a given substring and to find a server by ID.
  * The methods are implemented automatically by Spring Data MongoDB based on method name conventions.
  */
+@CrossOrigin(origins = "http://localhost:3000")
 public interface ServerRepository extends MongoRepository<Server, String> {
 
     /**
