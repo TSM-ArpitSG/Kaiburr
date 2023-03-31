@@ -1,44 +1,44 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./ServerForm.css";
+import React, { useState } from "react"; // import React and useState hook from react library
+import axios from "axios"; // import axios for making API requests
+import "./ServerForm.css"; // import CSS styles for this component
 
-function ServerForm({ onServerCreated }) {
-  const [server, setServer] = useState({
+function ServerForm({ onServerCreated }) { // define ServerForm component that takes onServerCreated prop
+  const [server, setServer] = useState({ // set up state using the useState hook
     id: "",
     name: "",
     language: "",
     framework: "",
   });
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState(""); // set up another piece of state for displaying messages
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-      .post("http://localhost:8080/servers", server)
-      .then((res) => {
-        onServerCreated(res.data);
-        setMessage("Server created successfully!");
-        setServer({
+  const handleSubmit = (e) => { // define a function to handle form submissions
+    e.preventDefault(); // prevent the default form submission behavior
+    axios // use axios to make a POST request to the server API
+      .post("http://localhost:8080/servers", server) // specify the URL and data to send
+      .then((res) => { // if the request is successful
+        onServerCreated(res.data); // call the onServerCreated callback with the data returned by the server
+        setMessage("Server created successfully!"); // set a success message to display to the user
+        setServer({ // reset the form inputs
           id: "",
           name: "",
           language: "",
           framework: "",
         });
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((err) => { // if there's an error
+        console.log(err); // log the error to the console
       });
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setServer((prevState) => ({
+  const handleChange = (e) => { // define a function to handle changes to form inputs
+    const { name, value } = e.target; // get the name and value of the input that triggered the event
+    setServer((prevState) => ({ // update the server state with the new value for the input that changed
       ...prevState,
       [name]: value,
     }));
   };
 
-  return (
+  return ( // return a form with input fields and a submit button
     <form className="server-form">
       <h2 className="server-form__title">Create a Server Object</h2>
       <div className="server-form__group">
@@ -103,4 +103,4 @@ function ServerForm({ onServerCreated }) {
 
 export default ServerForm;
 
-
+// Code Written by @Arpit Singh 19BCG10069

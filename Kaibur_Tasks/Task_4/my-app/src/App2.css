@@ -1,18 +1,27 @@
+/* Defines the font family for the entire webpage */
 body {
-
   font-family: 'Roboto', sans-serif;
 }
 
+/* Defines styles for the h1 header */
 h1 {
+  /* Centers the header text */
   text-align: center;
+  /* Sets the font size to 4rem */
   font-size: 4rem;
+  /* Sets the color to grey */
   color: #grey;
+  /* Adds a top margin of 10% */
   margin-top: 10%;
+  /* Adds a text shadow of 2px */
   text-shadow: 2px 2px 2px #000;
 }
 
+/* Media query for screens with a maximum width of 600px */
 @media only screen and (max-width: 600px) {
+  /* Reduces the font size of the h1 header to 3rem */
   h1 {
     font-size: 3rem;
   }
 }
+/* Code Written by @Arpit Singh 19BCG10069 */

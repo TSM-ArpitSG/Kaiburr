@@ -7,17 +7,17 @@ import SearchByName from "./SearchByName";
 import "./App2.css"
 
 function App() {
-  const [servers, setServers] = useState([]);
-  const [message, setMessage] = useState("");
+  const [servers, setServers] = useState([]); // Set state variable for servers
+  const [message, setMessage] = useState(""); // Set state variable for message
 
   useEffect(() => {
     // GET request to retrieve all servers
     axios.get("http://localhost:8080/servers")
       .then((res) => {
-        setServers(res.data);
+        setServers(res.data); // Update state variable with server data
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err); // Log any errors to the console
       });
   }, []);
 
@@ -25,10 +25,10 @@ function App() {
     // GET request to search for a server by ID
     axios.get(`http://localhost:8080/servers/${id}`)
       .then((res) => {
-        setServers(res.data);
+        setServers(res.data); // Update state variable with server data
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err); // Log any errors to the console
       });
   };
 
@@ -36,10 +36,10 @@ function App() {
     // GET request to search for a server by name
     axios.get(`http://localhost:8080/servers?name=${name}`)
       .then((res) => {
-        setServers(res.data);
+        setServers(res.data); // Update state variable with server data
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err); // Log any errors to the console
       });
   };
 
@@ -47,16 +47,16 @@ function App() {
     // POST request to create a new server
     axios.post("http://localhost:8080/servers", server)
       .then((res) => {
-        setServers([...servers, res.data]);
-        setMessage("Server created successfully!");
+        setServers([...servers, res.data]); // Add new server to the state variable
+        setMessage("Server created successfully!"); // Update message state variable
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err); // Log any errors to the console
       });
   };
 
   const handleDelete = (id) => {
-    setServers((prevServers) => prevServers.filter((server) => server.id !== id));
+    setServers((prevServers) => prevServers.filter((server) => server.id !== id)); // Update state variable with new array of servers after deleting a server
   };
 
   return (
@@ -73,6 +73,6 @@ function App() {
 }
 
 export default App;
-
+/* Code Written by @Arpit Singh 19BCG10069 */
 
 

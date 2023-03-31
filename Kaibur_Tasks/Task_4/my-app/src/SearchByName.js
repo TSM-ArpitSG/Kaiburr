@@ -1,24 +1,25 @@
-import React, { useState } from "react";
+import React, { useState } from "react";  // import necessary modules
 import axios from "axios";
-import "./SearchByName.css"
-function SearchByName() {
-  const [name, setName] = useState("");
-  const [servers, setServers] = useState([]);
+import "./SearchByName.css"  // import CSS file
 
-  const handleSubmit = (e) => {
+function SearchByName() {
+  const [name, setName] = useState("");  // state to keep track of input field value
+  const [servers, setServers] = useState([]);  // state to keep track of filtered servers
+
+  const handleSubmit = (e) => {  // function to handle form submission
     e.preventDefault();
-    axios.get(`http://localhost:8080/servers?name=${name}`)
+    axios.get(`http://localhost:8080/servers?name=${name}`)  // send GET request to server
       .then((res) => {
-        const filteredServers = res.data.filter(server => server.name.toLowerCase().includes(name.toLowerCase()));
-        setServers(filteredServers);
+        const filteredServers = res.data.filter(server => server.name.toLowerCase().includes(name.toLowerCase()));  // filter servers based on input field value
+        setServers(filteredServers);  // set state with filtered servers
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const handleChange = (e) => {
-    setName(e.target.value);
+  const handleChange = (e) => {  // function to handle input field change
+    setName(e.target.value);  // update state with new input value
   };
 
   return (
@@ -61,3 +62,4 @@ function SearchByName() {
 
 export default SearchByName;
 
+/* Code Written by @Arpit Singh 19BCG10069 */
